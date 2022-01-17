@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  a(href="/new") 
+    button.btn.btn-default(type="button", data-dismiss="modal") Add New Message
+  h1=title
+  - for (var i = 0; i < messages.length; i++)
+    li= messages[i].text + ' This is ' + messages[i].user + ' and I was added at ' + messages[i].added
+    p= ''
